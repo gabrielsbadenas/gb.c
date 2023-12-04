@@ -51,7 +51,7 @@ void setupSprite(struct Object1* obj, UINT8 x, UINT8 y, UINT8 i){
 void update(void);
 void update(void){
 	setupPlayer(4);
-	setupSprite(&a,10,10,10);
+	setupSprite(&a,10,10,16);
 	unsigned char i = 0;
 	while(1){
 		player.x=plx;
@@ -73,7 +73,7 @@ void main(void)
 	//printf("La musica murio, hace minimo, 20 anios. Creci escuchando a The Beatles,  Pink Floyd, Queen, Soda, Radiohead, Spinetta en todos sus colores, The  Who, U2, Los Rolling, entre tantos otros .. me apena tanto cuando  escucho hablar a los jovenes de flow y escuchar los que escuchan");
 	plx=64;
 	ply=64;
-	set_sprite_data(0,16,hex);
+	set_sprite_data(0,17,hex);
 	set_sprite_tile(0,0);
 	SHOW_SPRITES;
 	update();
