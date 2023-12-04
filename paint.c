@@ -9,10 +9,14 @@ struct Object{
 	int spriteAmount;
 };
 struct Object player;
-
-void moveSprite(struct Object* obj, UINT8 i, UINT8 x, UINT8 y);
-void moveSprite(struct Object* obj, UINT8 i, UINT8 x, UINT8 y){
-	move_sprite(obj->spritids[i],x,y);
+struct Object1{
+	UBYTE spritid;
+	UINT8 x, y;
+};
+struct Object1 a;
+void moveSprite(struct Object1* obj, UINT8 x, UINT8 y);
+void moveSprite(struct Object1* obj, UINT8 x, UINT8 y){
+	move_sprite(obj->spritid,x,y);
 }
 void moveObject(struct Object* obj, UINT8 x, UINT8 y);
 void moveObject(struct Object* obj, UINT8 x, UINT8 y) {
@@ -38,9 +42,16 @@ void setupPlayer(UINT8 spriteAmount){
 		++i;
 	}
 }
+void setupSprite(struct Object1* obj, UINT8 x, UINT8 y, UINT8 i){
+	obj->x=x;
+	obj->y=y;
+	set_sprite_tile(i,i);
+	obj->spritid=i;
+}
 void update(void);
 void update(void){
 	setupPlayer(4);
+	setupSprite(&a,10,10,10);
 	unsigned char i = 0;
 	while(1){
 		player.x=plx;
@@ -50,6 +61,7 @@ void update(void){
 		if(joypad() & J_DOWN) ++ply;
 		if(joypad() & J_UP) --ply;
 		moveObject(&player,plx,ply);
+		moveSprite(&a,100,100);
 		//move_sprite(0,plx,ply);
 		delay(10);
 		//printf("%d\n",i);
