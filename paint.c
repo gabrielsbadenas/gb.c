@@ -61,7 +61,7 @@ void update(void){
 		if(joypad() & J_DOWN) ++ply;
 		if(joypad() & J_UP) --ply;
 		moveObject(&player,plx,ply);
-		moveSprite(&a,100,100);
+		moveSprite(&a,130,130);
 		//move_sprite(0,plx,ply);
 		delay(10);
 		//printf("%d\n",i);
@@ -70,7 +70,7 @@ void update(void){
 }
 void main(void)
 {
-	//printf("La musica murio, hace minimo, 20 anios. Creci escuchando a The Beatles,  Pink Floyd, Queen, Soda, Radiohead, Spinetta en todos sus colores, The  Who, U2, Los Rolling, entre tantos otros .. me apena tanto cuando  escucho hablar a los jovenes de flow y escuchar los que escuchan");
+	printf("La musica murio, hace minimo, 20 anios. Creci escuchando a The Beatles,  Pink Floyd, Queen, Soda, Radiohead, Spinetta en todos sus colores, The  Who, U2, Los Rolling, entre tantos otros .. me apena tanto cuando  escucho hablar a los jovenes de flow y escuchar los que escuchan");
 	plx=64;
 	ply=64;
 	set_sprite_data(0,17,hex);
